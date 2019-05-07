@@ -15,7 +15,7 @@ public class ScreenBounds : MonoBehaviour
         bottomBound = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.transform.position.z)).y;
         rightBound = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0 - cam.transform.position.z)).x;
         leftBound = cam.ScreenToWorldPoint(new Vector3(0, 0, 0 - cam.transform.position.z)).x;
-        buffer = 1f;
+        buffer = 0.5f;
     }
 
     public Vector3 CheckBounds(Transform tra)

@@ -43,7 +43,7 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.GetComponent<Text>().text = "Score : " + score;
         highScoreText.GetComponent<Text>().text = "HighScore : " + score;
-        livesText.GetComponent<Text>().text = "lives  : " + lives;
+        livesText.GetComponent<Text>().text = "Lives  : " + lives;
        
     }
     public int GetScore()

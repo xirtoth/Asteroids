@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject gameOverPanel;
     public Transform playerShip;
     private bool isDead = false;
+    private float undestructableTime = 2f;
     private int lives = 3;
     public float maxSpeed = 1;
     public float speed = 10;
@@ -36,6 +37,7 @@ public class PlayerScript : MonoBehaviour
         this.gameObject.transform.position = Vector3.zero;
 
         rb.velocity = Vector3.zero;
+        GetComponent<BoxCollider>().enabled = false;
         Invoke("Respawn", 2f);
     }
 
@@ -61,8 +63,13 @@ public class PlayerScript : MonoBehaviour
         playerShip.GetComponent<Renderer>().enabled = true;
         transform.position = Vector3.zero;
         this.gameObject.SetActive(true);
+        Invoke("SetColliderActive", undestructableTime);
     }
 
+    private void SetColliderActive()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+    }
     private void Awake()
     {
         scoreManager = FindObjectOfType<ScoreManager>();

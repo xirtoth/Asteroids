@@ -10,8 +10,8 @@ public class AsteroidScript : MonoBehaviour
 
     private int mediumToSpawn = 2;
     private int smallToSpawn = 4;
-    private float minRandomSpeed = 50f;
-    private float maxRandomSpeed = 200f;
+    private float minRandomSpeed = 10f;
+    private float maxRandomSpeed = 150f;
     private int largeScore = 100;
     private int mediumScore = 175;
     private int smallScore = 250;
