@@ -8,6 +8,8 @@ TagManager:
   - AsteroidLarge
   - AsteroidMedium
   - AsteroidSmall
+  - Ufo
+  - UfoBullet
   layers:
   - Default
   - TransparentFX
