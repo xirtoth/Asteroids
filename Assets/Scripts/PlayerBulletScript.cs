@@ -37,4 +37,13 @@ public class PlayerBulletScript : MonoBehaviour
 
         transform.position = screenBounds.CheckBounds(transform);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Ufo")
+        {
+            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+    }
 }

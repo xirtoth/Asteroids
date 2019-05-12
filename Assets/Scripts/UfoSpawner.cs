@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UfoSpawner : MonoBehaviour
 {
-    private float spawnTime = 10f;
+    private float spawnTime = 10;
     private float timeToSpawn;
     private ScreenBounds screenBounds;
 
@@ -26,13 +26,16 @@ public class UfoSpawner : MonoBehaviour
     {
         if(Time.time > timeToSpawn)
         {
+            timeToSpawn = spawnTime + Time.time;
+          //  Debug.Log("Spawning UFO");
             GameObject ufo;
             ufo = ObjectPooler.SharedInstance.GetPooledObject("Ufo");
+            Debug.Log(ufo);
             if(ufo != null)
             {
-                ufo.transform.position = Random.insideUnitSphere * 20f;
+                ufo.transform.position = Random.insideUnitSphere * 2000f;
                 ufo.SetActive(true);
-                timeToSpawn = spawnTime + Time.time;
+                
             }
         }
     }

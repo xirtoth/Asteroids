@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // audio index 0 = playerShoot, 1 = asteroidGetHit, 2 = asteroidHitPlayer
+    // audio index 0 = playerShoot, 1 = asteroidGetHit, 2 = asteroidHitPlayer, 3 = ufoShoot;
     private AudioSource audioSource;
     public static AudioManager sharedInstance;
 

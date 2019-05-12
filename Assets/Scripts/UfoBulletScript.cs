@@ -28,9 +28,17 @@ public class UfoBulletScript : MonoBehaviour
 
     private void OnEnable()
     {
+
+        
+   /*     if (ufo == null)
+        {
+            return;
+        } */
+
        
-        rb.AddForce((player.transform.position - ufo.transform.position).normalized * bulletSpeed);
+       
         timeToDestroy = aliveTime + Time.time;
+       
     }
 
     private void OnDisable()
@@ -46,5 +54,13 @@ public class UfoBulletScript : MonoBehaviour
         }
 
         transform.position = screenBounds.CheckBounds(transform);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            player.GetComponent<PlayerScript>().Die();
+        }
     }
 }
