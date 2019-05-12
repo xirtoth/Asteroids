@@ -7,6 +7,7 @@ public class UfoScript : MonoBehaviour
     private float speed = 150f;
     private GameObject player;
     private Rigidbody rb;
+   
     private ScreenBounds screenBounds;
     private AudioManager audioManager;
 

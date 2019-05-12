@@ -4,6 +4,7 @@ public class PlayerBulletScript : MonoBehaviour
 {
     private Rigidbody rb;
     private ScreenBounds screenBounds;
+    private ScoreManager scoreManager;
     private GameObject player;
     private float bulletSpeed = 350f;
     private float aliveTime = 3f;
@@ -12,6 +13,7 @@ public class PlayerBulletScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         screenBounds = FindObjectOfType<ScreenBounds>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -44,6 +46,8 @@ public class PlayerBulletScript : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            scoreManager.IncreaseScore(1000);
+            
         }
     }
 }
